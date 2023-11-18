@@ -15,7 +15,7 @@ async function getAboutMe() {
             aboutMe.push($(e).text()) //adds text from each paragaph to the array
         }); 
     } catch (e) {
-            console.log(e);
+        console.log(e);
     }
 
     return aboutMe; 

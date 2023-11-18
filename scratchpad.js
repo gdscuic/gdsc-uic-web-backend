@@ -1,5 +1,6 @@
 // run this file by putting "node scratchpad.js" in the terminal
 const getChapterName = require("./functions/example.js");
+const getAboutMe = require("./functions/aboutme.js");
 
 /*
 our functions return promises, so we need to wait for the result to come back
@@ -16,3 +17,16 @@ getChapterName().then((chapterName) => {
 
   console.log(`Chapter name: ${chapterName}`);
 });
+
+getAboutMe().then((aboutMe) => {
+  if (!aboutMe) {
+    console.log("Couldn't get about me");
+    return;
+  }
+
+  aboutMe.forEach(function(entry){ 
+    console.log(entry);
+  });
+});
+
+

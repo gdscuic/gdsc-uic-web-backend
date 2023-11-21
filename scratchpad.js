@@ -1,6 +1,7 @@
 // run this file by putting "node scratchpad.js" in the terminal
 const getChapterName = require("./functions/example.js");
 const getAboutMe = require("./functions/aboutme.js");
+const getContributors = require("./functions/githubcontributors.js");
 
 /*
 our functions return promises, so we need to wait for the result to come back
@@ -29,4 +30,17 @@ getAboutMe().then((aboutMe) => {
   });
 });
 
+getContributors().then((contributors) => {
+  if (!contributors) {
+    console.log("Couldn't get contributors");
+    return;
+  }
 
+  console.log("Contributors:");
+//   console.log(contributors);
+
+  // print the contributors (key) and their images (value)
+  for (const [key, value] of contributors.entries()) {
+    console.log(`${key}, image ${value}`);
+  }
+});

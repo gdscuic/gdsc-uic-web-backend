@@ -44,3 +44,14 @@ getContributors().then((contributors) => {
     console.log(`${key}, image ${value}`);
   }
 });
+
+getOrganizers().then((organizer) => {
+  if (!organizer) {
+    console.log("Couldn't get organizer");
+    return;
+  }
+
+  organizer.forEach(function(person){ 
+    console.log(person);
+  });
+});

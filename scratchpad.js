@@ -2,6 +2,7 @@
 const getChapterName = require("./functions/example.js");
 const getAboutMe = require("./functions/aboutme.js");
 const getContributors = require("./functions/githubcontributors.js");
+const getOrganizers = require("./functions/organizer.js");
 
 /*
 our functions return promises, so we need to wait for the result to come back

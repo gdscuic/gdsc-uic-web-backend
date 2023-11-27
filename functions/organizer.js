@@ -12,8 +12,9 @@ async function getOrganizers(){
 
   
     const organizer = $("#TLsV2lJge1b");
+    const information = organizer.find(".dynamic-text>div")
     // const information = organizer.find("dynamic-text");
-    $(organizer.find("dynamic-text")).each((i,e) => {
+    information.each((i,e) => {
     organizers.push($(e).text())
     });
 

@@ -1,7 +1,7 @@
 // run this file by putting "node scratchpad.js" in the terminal
 const getChapterName = require("./functions/example.js");
 const getAboutMe = require("./functions/aboutme.js");
-const getPastEvents = require("./functions/index.js");
+const getPastEvents = require("./functions/pastEvents.js");
 
 /*
 our functions return promises, so we need to wait for the result to come back
@@ -40,5 +40,3 @@ getPastEvents().then((pastEvent) => {
     console.log(pastEvent);
   });
 });
-
-

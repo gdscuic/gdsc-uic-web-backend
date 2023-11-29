@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const corsOptions = {
   origin: ['http://localhost:' + PORT, "https://gdscuic.dev"],
 };
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.get('/', (req, res) => {
   res.send({

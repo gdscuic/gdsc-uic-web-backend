@@ -24,7 +24,6 @@ async function main() {
     // githubContributors: githubContributors,
   };
 
-
   // save data to disk
   fs.writeFileSync("data.json", JSON.stringify(data));
 }

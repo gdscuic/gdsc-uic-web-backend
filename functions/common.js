@@ -1,5 +1,6 @@
 const fetch = require("cross-fetch");
 const fs = require("fs");
+const getHTMLFromPuppeteer = require("../puppeteerStuff.js");
 
 async function fetcher(url) {
   // throw if response is not ok
@@ -17,7 +18,7 @@ async function fetcher(url) {
 
 async function saveHTMLToFile() {
   try {
-    const html = await fetcher("https://gdsc.community.dev/university-of-illinois-chicago/");
+    const html = await getHTMLFromPuppeteer();
     fs.writeFileSync("html.txt", html);
   } catch (error) {
     console.error("Couldn't save HTML to file", error);

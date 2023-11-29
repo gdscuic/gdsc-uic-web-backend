@@ -15,6 +15,15 @@ async function fetcher(url) {
   return text;
 }
 
+async function saveHTMLToFile() {
+  try {
+    const html = await fetcher("https://gdsc.community.dev/university-of-illinois-chicago/");
+    fs.writeFileSync("html.txt", html);
+  } catch (error) {
+    console.error("Couldn't save HTML to file", error);
+  }
+}
+
 async function grabHTMLFromSite() {
   try {
     // const html = await fetcher("https://gdsc.community.dev/university-of-illinois-chicago/");
@@ -30,4 +39,4 @@ async function grabHTMLFromSite() {
 }
 
 // this file may export multiple functions in the future, so we use an object to contain a list of them
-module.exports = { grabHTMLFromSite, fetcher };
+module.exports = { grabHTMLFromSite, saveHTMLToFile, fetcher };

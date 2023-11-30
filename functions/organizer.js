@@ -1,27 +1,24 @@
 const { grabHTMLFromSite } = require("./common.js");
 const cheerio = require("cheerio");
 
-async function getOrganizers(){
+async function getOrganizers() {
   let organizers = [];
-  try{
-
-  
+  try {
     const html = await grabHTMLFromSite();
     let $ = await cheerio.load(html);
     if (!html) return null;
 
-  
     const organizer = $("#TLsV2lJge1b");
-    const information = organizer.find(".dynamic-text>div")
+    const information = organizer.find(".dynamic-text");
     // const information = organizer.find("dynamic-text");
-    information.each((i,e) => {
-    organizers.push($(e).text())
-    });
 
-} catch (e) {
+    information.each((i, e) => {
+      organizers.push($(e).text());
+    });
+  } catch (e) {
     console.log(e);
-}
-return organizers;
+  }
+  return organizers;
 }
 
 module.exports = getOrganizers;

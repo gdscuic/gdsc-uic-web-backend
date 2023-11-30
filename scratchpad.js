@@ -2,6 +2,7 @@
 const getChapterName = require("./functions/example.js");
 const getAboutMe = require("./functions/aboutme.js");
 const getContributors = require("./functions/githubcontributors.js");
+const getOrganizers = require("./functions/organizer.js");
 
 /*
 our functions return promises, so we need to wait for the result to come back
@@ -43,4 +44,15 @@ getContributors().then((contributors) => {
   for (const [key, value] of contributors.entries()) {
     console.log(`${key}, image ${value}`);
   }
+});
+
+getOrganizers().then((organizer) => {
+  if (!organizer) {
+    console.log("Couldn't get organizer");
+    return;
+  }
+
+  organizer.forEach(function(person){ 
+    console.log(person);
+  });
 });
